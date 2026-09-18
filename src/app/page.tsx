@@ -27,15 +27,15 @@ const plants = [
   {
     name: "Manuka",
     detail: "Fragrant and drought-friendly, with soft blooms bees return to all summer.",
-    image: "/gallery/WhatsApp Image 2026-05-06 at 19.02.58 (1).jpeg",
+    image: "/gallery/hero-image.jpeg",
   },
   {
-    name: "Bee balm",
+    name: "Lavender",
     detail: "A bright, generous perennial that brings hummingbirds and butterflies close.",
-    image: "/gallery/WhatsApp Image 2026-05-06 at 19.02.59 (2).jpeg",
+    image: "/gallery/WhatsApp Image 2026-05-06 at 19.02.57 (1).jpeg",
   },
   {
-    name: "Echinacea",
+    name: "BottleBrush",
     detail: "A resilient native favourite with a long bloom window and architectural seed heads.",
     image: "/gallery/WhatsApp Image 2026-05-06 at 19.03.00 (3).jpeg",
   },
