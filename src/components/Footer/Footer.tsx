@@ -20,11 +20,11 @@ We believe a healthy environment begins with the smallest wings. Our plants are 
           <ul className='list-inside space-y-4 text-left text-gray-300/80'>
             <li>
               <h2>Phone Number</h2>
-              <span>+254 729842282</span>
+              <span>+254 740478418</span>
             </li>
             <li>
               <h2>Email</h2>
-              <span>shirostan@gmail.com</span>
+              <span>pollination@propagator.com</span>
             </li>
              <li>
               <h2>Location</h2>

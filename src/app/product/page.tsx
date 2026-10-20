@@ -3,11 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { products } from "@/data/products";
+import { formatStartingPrice, productCategories, products } from "@/data/products";
 
-const categories = ["Medicinal", "Herbal", "Ornamental", "Commercial", "Indigenous"] as const;
-const MIN_PRICE = 15;
-const MAX_PRICE = 1000;
+const categories = productCategories;
+const MIN_PRICE = 20;
+const MAX_PRICE = 300;
 
 export default function ProductListingPage() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -20,10 +20,16 @@ export default function ProductListingPage() {
       : [...current, category]);
   };
 
-  const filteredProducts = products.filter((product) => {
-    const categoryMatches = selectedCategories.length === 0 || selectedCategories.includes(product.category);
-    return categoryMatches && product.priceValue >= minPrice && product.priceValue <= maxPrice;
-  });
+  const filteredProducts = products
+    .filter((product) => {
+      const categoryMatches = selectedCategories.length === 0 || selectedCategories.includes(product.category);
+      const priceMatches = product.startingPrice >= minPrice && product.startingPrice <= maxPrice;
+      return categoryMatches && priceMatches;
+    })
+    .sort((first, second) => {
+      const categoryOrder = categories.indexOf(first.category) - categories.indexOf(second.category);
+      return categoryOrder || second.categoryRating - first.categoryRating;
+    });
 
   const resetFilters = () => {
     setSelectedCategories([]);
@@ -61,21 +67,42 @@ export default function ProductListingPage() {
               </fieldset>
               <fieldset className="price-filter">
                 <legend>Price range</legend>
-                <div className="price-inputs"><label><span>From</span><input type="number" min={MIN_PRICE} max={maxPrice} value={minPrice} onChange={(event) => setMinPrice(Math.min(Number(event.target.value) || MIN_PRICE, maxPrice))} /></label><span className="price-dash">—</span><label><span>To</span><input type="number" min={minPrice} max={MAX_PRICE} value={maxPrice} onChange={(event) => setMaxPrice(Math.max(Number(event.target.value) || MAX_PRICE, minPrice))} /></label></div>
+                <div className="price-inputs"><label><span>From (KES)</span><input type="number" min={MIN_PRICE} max={maxPrice} value={minPrice} onChange={(event) => setMinPrice(Math.min(Number(event.target.value) || MIN_PRICE, maxPrice))} /></label><span className="price-dash">—</span><label><span>To (KES)</span><input type="number" min={minPrice} max={MAX_PRICE} value={maxPrice} onChange={(event) => setMaxPrice(Math.max(Number(event.target.value) || MAX_PRICE, minPrice))} /></label></div>
                 <input className="price-range" type="range" min={MIN_PRICE} max={MAX_PRICE} value={minPrice} onChange={(event) => setMinPrice(Math.min(Number(event.target.value), maxPrice))} aria-label="Minimum price" />
                 <input className="price-range price-range-top" type="range" min={MIN_PRICE} max={MAX_PRICE} value={maxPrice} onChange={(event) => setMaxPrice(Math.max(Number(event.target.value), minPrice))} aria-label="Maximum price" />
-                <div className="price-limits"><span>${MIN_PRICE}</span><span>${MAX_PRICE}</span></div>
+                <div className="price-limits"><span>KES {MIN_PRICE.toLocaleString("en-KE")}</span><span>KES {MAX_PRICE.toLocaleString("en-KE")}</span></div>
               </fieldset>
             </aside>
             <div className="product-grid product-list-grid">
               {filteredProducts.length > 0 ? filteredProducts.map((product) => (
                 <article className="product-card" key={product.id}>
                   <Link className="product-image" href={`/product/${product.id}`} aria-label={`View ${product.name}`}>
-                    <Image src={product.image} alt={product.name} fill sizes="(max-width: 768px) 100vw, 33vw" />
+                    {product.image ? (
+                      <Image src={product.image} alt={product.name} fill sizes="(max-width: 768px) 100vw, 33vw" />
+                    ) : (
+                      <span className="product-image-placeholder">Product photo needed</span>
+                    )}
+                    {product.categoryRating === 3 && (
+                      <span className="product-icon product-trophy" role="img" aria-label="Top rated in category">
+                        <Image src="/trophy.svg" alt="" width={24} height={24} />
+                      </span>
+                    )}
+                    {product.pollinatorFriendly && (
+                      <span className="product-icon product-bee" role="img" aria-label="Pollinator friendly">
+                        <Image src="/bee.svg" alt="" width={24} height={24} />
+                      </span>
+                    )}
                   </Link>
                   <div className="product-info">
-                    <div><p className="card-kicker">{product.category} · {product.type}</p><h3>{product.name}</h3><p className="product-summary">{product.shortDescription}</p></div>
-                    <span className="price">{product.price}</span>
+                    <div>
+                      <p className="card-kicker">{product.category} · {product.type}</p>
+                      <div className="product-title-row">
+                        <h3>{product.name}</h3>
+                        <span className="product-status">{product.status}</span>
+                      </div>
+                      <p className="product-summary">{product.shortDescription}</p>
+                    </div>
+                    <span className="price">{formatStartingPrice(product)}</span>
                   </div>
                   <Link className="card-action" href={`/product/${product.id}`}>Read about {product.name} <span aria-hidden="true">↗</span></Link>
                 </article>

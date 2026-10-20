@@ -1,14 +1,39 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useState } from "react";
+import { type FormEvent, useState } from "react";
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSent(true);
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    const formData = new FormData(event.currentTarget);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "contact",
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+        }),
+      });
+
+      if (!response.ok) throw new Error("Message could not be sent.");
+      setSent(true);
+    } catch {
+      setErrorMessage("We couldn’t send your message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -28,8 +53,8 @@ export default function ContactPage() {
             <h2>Good things<br /><em>start with a note.</em></h2>
             <p className="contact-details-copy">Tell us what you are growing, what you are wondering about, or simply what brought you here. Our small team will get back to you soon.</p>
             <div className="contact-options">
-              <a href="mailto:shirostan@gmail.com"><span>Email</span><strong>shirostan@gmail.com</strong><b aria-hidden="true">↗</b></a>
-              <a href="tel:+254729842282"><span>Phone</span><strong>+254 729842282</strong><b aria-hidden="true">↗</b></a>
+              <a href="mailto:shirostan@gmail.com"><span>Email</span><strong>pollination@propagator.com</strong><b aria-hidden="true">↗</b></a>
+              <a href="tel:+254729842282"><span>Phone</span><strong>+254 740478418</strong><b aria-hidden="true">↗</b></a>
               <div><span>Visit</span><strong>Nakuru, Naivasha<br />Kenya</strong></div>
             </div>
             <Link className="text-link" href="/about">Learn more about us <span aria-hidden="true">↗</span></Link>
@@ -44,7 +69,8 @@ export default function ContactPage() {
                 <label><span>Your name</span><input name="name" required placeholder="A name we can call you" /></label>
                 <label><span>Email address</span><input name="email" type="email" required placeholder="you@example.com" /></label>
                 <label><span>What can we help with?</span><textarea name="message" required rows={5} placeholder="Tell us a little about your question" /></label>
-                <button className="button button-light" type="submit">Send message <span aria-hidden="true">↗</span></button>
+                {errorMessage && <p role="alert">{errorMessage}</p>}
+                <button className="button button-light" type="submit" disabled={isSubmitting}>{isSubmitting ? "Sending…" : "Send message"} {!isSubmitting && <span aria-hidden="true">↗</span>}</button>
               </form>
             )}
           </div>

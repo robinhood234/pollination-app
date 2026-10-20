@@ -6,14 +6,49 @@ import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
 const galleryItems = [
-  { image: "/gallery/WhatsApp Image 2026-05-06 at 19.03.01.jpeg", title: "Morning light", category: "Garden notes", description: "The day begins softly, with flowers opening into the first warmth." },
-  { image: "/gallery/WhatsApp Image 2026-05-06 at 19.03.00 (2).jpeg", title: "Colour with a purpose", category: "Plant stories", description: "A generous bloom makes room for bees, butterflies and a little wonder." },
-  { image: "/gallery/WhatsApp Image 2026-05-06 at 19.03.00.jpeg", title: "A growing conversation", category: "Community", description: "Gardens become richer when knowledge and cuttings are passed around." },
-  { image: "/gallery/WhatsApp Image 2026-05-06 at 19.02.59 (1).jpeg", title: "In the green", category: "Garden notes", description: "Texture, shade and the quiet rhythm of a place being cared for." },
-  { image: "/gallery/WhatsApp Image 2026-05-06 at 19.02.58 (3).jpeg", title: "A closer look", category: "Plant stories", description: "There is a whole landscape in every stem, leaf and unfurling petal." },
-  { image: "/gallery/WhatsApp Image 2026-05-06 at 19.02.57.jpeg", title: "Room to gather", category: "Community", description: "The best gardens invite us to slow down and stay a little longer." },
-  { image: "/gallery/WhatsApp Image 2026-05-06 at 19.02.53 (1).jpeg", title: "Wild edges", category: "Garden notes", description: "A little untamed space can become a welcome sign for pollinators." },
-  { image: "/gallery/WhatsApp Image 2026-05-06 at 19.02.52 (2).jpeg", title: "The daily tending", category: "Behind the scenes", description: "Small acts, repeated often, are how a living collection takes shape." },
+  { image: "/gallery/Jasmine.jpeg", title: "Jasmine" },
+  { image: "/gallery/black-wattle-one.jpeg", title: "Black Wattle in bloom" },
+  { image: "/gallery/black-wattle-two.jpeg", title: "Black Wattle foliage" },
+  { image: "/gallery/bottle-brush-two.jpeg", title: "Bottlebrush" },
+  { image: "/gallery/bottle-brush.jpeg", title: "Bottlebrush flowers" },
+  { image: "/gallery/chameleon.jpeg", title: "Chameleon among Cypress" },
+  { image: "/gallery/crimson-bottle-brush-one.jpeg", title: "Crimson Bottlebrush" },
+  { image: "/gallery/cypress-image-one.jpeg", title: "Cypress sapling" },
+  { image: "/gallery/cypress-image.jpeg", title: "Cypress" },
+  { image: "/gallery/english-lavender-image-two.jpeg", title: "English Lavender" },
+  { image: "/gallery/english-lavender-image.jpeg", title: "English Lavender in bloom" },
+  { image: "/gallery/english-lavender-two.jpeg", title: "English Lavender close-up" },
+  { image: "/gallery/french-lavender-five.jpeg", title: "French Lavender" },
+  { image: "/gallery/french-lavender-four.jpeg", title: "French Lavender foliage" },
+  { image: "/gallery/french-lavender-one.jpeg", title: "French Lavender in bloom" },
+  { image: "/gallery/french-lavender-six.jpeg", title: "French Lavender plants" },
+  { image: "/gallery/french-lavender-three.jpeg", title: "French Lavender detail" },
+  { image: "/gallery/french-lavender-two.jpeg", title: "French Lavender growth" },
+  { image: "/gallery/german-chamomile.jpeg", title: "German Chamomile" },
+  { image: "/gallery/hero-image.jpeg", title: "Garden in bloom" },
+  { image: "/gallery/honesuckle-two.jpeg", title: "Honeysuckle plants" },
+  { image: "/gallery/honeysuckle-one.jpeg", title: "Honeysuckle flowers" },
+  { image: "/gallery/insect-one.jpeg", title: "A garden visitor" },
+  { image: "/gallery/lavender.jpeg", title: "Lavender" },
+  { image: "/gallery/manuka-four.jpeg", title: "Manuka" },
+  { image: "/gallery/manuka-image-2.jpeg", title: "Manuka in the nursery" },
+  { image: "/gallery/manuka-image.jpeg", title: "Manuka sapling" },
+  { image: "/gallery/manuka-one.jpeg", title: "Manuka foliage" },
+  { image: "/gallery/manuka-three.jpeg", title: "Manuka flowers" },
+  { image: "/gallery/manuka-two.jpeg", title: "Young Manuka" },
+  { image: "/gallery/mexiacan-heather-two.jpeg", title: "Mexican Heather" },
+  { image: "/gallery/mexican-heather-one.jpeg", title: "Mexican Heather in bloom" },
+  { image: "/gallery/mexican-heather-three.jpeg", title: "Mexican Heather foliage" },
+  { image: "/gallery/mexican-heather-two.jpeg", title: "Mexican Heather close-up" },
+  { image: "/gallery/nursery-image-five.jpeg", title: "The nursery" },
+  { image: "/gallery/nursery-image-four (1).jpeg", title: "Growing together" },
+  { image: "/gallery/nursery-image-three.jpeg", title: "New growth" },
+  { image: "/gallery/nursery-image-two.jpeg", title: "Nursery plants" },
+  { image: "/gallery/nursery-image.jpeg", title: "A place to grow" },
+  { image: "/gallery/rosemary-image.jpeg", title: "Rosemary" },
+  { image: "/gallery/rosemary-two.jpeg", title: "Rosemary in the garden" },
+  { image: "/gallery/rosemary.jpeg", title: "Rosemary detail" },
+  { image: "/gallery/seedbeds-image.jpeg", title: "Seedbeds" },
 ];
 
 export default function GalleryPage() {
@@ -57,13 +92,16 @@ export default function GalleryPage() {
               <div className="gallery-carousel-container">
                 {galleryItems.map((item) => (
                   <article className="gallery-carousel-slide" key={item.title}>
-                    <div className="gallery-slide-image"><Image src={item.image} alt={item.title} fill sizes="(max-width: 800px) 100vw, 70vw" /></div>
+                    <div className="gallery-slide-image">
+                      <Image src={item.image} alt={item.title} fill sizes="(max-width: 800px) 100vw, 70vw" />
+                      <div className="gallery-slide-shade" aria-hidden="true" />
+                      <h3 className="gallery-slide-title">{item.title}</h3>
+                    </div>
                   </article>
                 ))}
               </div>
             </div>
             <div className="gallery-carousel-footer">
-              <div className="gallery-slide-caption"><p className="card-kicker">{galleryItems[selectedIndex].category}</p><h3>{galleryItems[selectedIndex].title}</h3><p>{galleryItems[selectedIndex].description}</p></div>
               <div className="gallery-carousel-controls"><span>{String(selectedIndex + 1).padStart(2, "0")} <i>/</i> {String(galleryItems.length).padStart(2, "0")}</span><button type="button" onClick={() => emblaApi?.scrollPrev()} aria-label="Previous image">←</button><button type="button" onClick={() => emblaApi?.scrollNext()} aria-label="Next image">→</button></div>
             </div>
           </div>

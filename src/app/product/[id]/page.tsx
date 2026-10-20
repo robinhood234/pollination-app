@@ -3,13 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { FormEvent, useState } from "react";
-import { getProduct } from "@/data/products";
+import { type FormEvent, useState } from "react";
+import { formatStartingPrice, getProduct } from "@/data/products";
 
 export default function ProductDetailPage() {
   const params = useParams<{ id: string }>();
   const product = getProduct(params.id);
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   if (!product) {
     return (
@@ -23,9 +25,33 @@ export default function ProductDetailPage() {
     );
   }
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSent(true);
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    const formData = new FormData(event.currentTarget);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "product",
+          productName: product.name,
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+        }),
+      });
+
+      if (!response.ok) throw new Error("Enquiry could not be sent.");
+      setSent(true);
+    } catch {
+      setErrorMessage("We couldn’t send your enquiry. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -37,15 +63,32 @@ export default function ProductDetailPage() {
 
       <section className="page-shell product-detail-grid">
         <div className="product-detail-image">
-          <Image src={product.image} alt={product.name} fill priority sizes="(max-width: 800px) 100vw, 55vw" />
+          {product.image ? (
+            <Image src={product.image} alt={product.name} fill priority sizes="(max-width: 800px) 100vw, 55vw" />
+          ) : (
+            <div className="product-image-placeholder">Product photo needed</div>
+          )}
         </div>
         <div className="product-detail-copy">
           <p className="eyebrow">{product.type}</p>
           <h1>{product.name}</h1>
-          <p className="product-detail-price">{product.price}</p>
-          <p className="product-detail-description">{product.description}</p>
+          <p className="product-detail-price">{formatStartingPrice(product)}</p>
+          <div className="product-description-row">
+            <p className="product-detail-description">{product.description}</p>
+            {product.pollinatorFriendly && (
+              <span
+                className="pollinator-description-icon"
+                role="img"
+                aria-label="Pollinator favourite"
+                data-tooltip="Pollinator favourite"
+                tabIndex={0}
+              >
+                <Image src="/bee.svg" alt="" width={28} height={28} />
+              </span>
+            )}
+          </div>
           <div className="product-facts">
-            <div><span>Light</span><strong>{product.light}</strong></div>
+            <div><span>Climate</span><strong>{product.climate}</strong></div>
             <div><span>Size</span><strong>{product.size}</strong></div>
             <div><span>Care</span><strong>{product.care}</strong></div>
           </div>
@@ -67,7 +110,8 @@ export default function ProductDetailPage() {
                 <label><span>Your name</span><input name="name" required placeholder="A name we can call you" /></label>
                 <label><span>Email address</span><input name="email" type="email" required placeholder="you@example.com" /></label>
                 <label><span>Your question</span><textarea name="message" required rows={5} placeholder={`Tell us about your space or ask about ${product.name}`} /></label>
-                <button className="button button-green" type="submit">Send enquiry <span aria-hidden="true">↗</span></button>
+                {errorMessage && <p role="alert">{errorMessage}</p>}
+                <button className="button button-green" type="submit" disabled={isSubmitting}>{isSubmitting ? "Sending…" : "Send enquiry"} {!isSubmitting && <span aria-hidden="true">↗</span>}</button>
               </>
             )}
           </form>

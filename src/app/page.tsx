@@ -3,26 +3,27 @@
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
-import { products } from "@/data/products";
+import { formatStartingPrice, products } from "@/data/products";
 
 const gallerySlides = [
   {
-    image: "/gallery/WhatsApp Image 2026-05-06 at 19.03.01.jpeg",
+    image: "/gallery/hero-image.jpeg",
     title: "A garden in motion",
     description: "Small moments of colour, texture and life from our growing spaces.",
   },
   {
-    image: "/gallery/WhatsApp Image 2026-05-06 at 19.03.00 (2).jpeg",
+    image: "/gallery/crimson-bottle-brush-one.jpeg",
     title: "Colour with a purpose",
     description: "We choose plants that make room for pollinators at every stage of the season.",
   },
   {
-    image: "/gallery/WhatsApp Image 2026-05-06 at 19.03.00.jpeg",
+    image: "/gallery/Jasmine.jpeg",
     title: "Made for gathering",
     description: "A closer look at the flowers and rituals that keep our community connected.",
   },
 ];
 
+const limitProducts = products.slice(0, 3);
 const plants = [
   {
     name: "Manuka",
@@ -32,12 +33,12 @@ const plants = [
   {
     name: "Lavender",
     detail: "A bright, generous perennial that brings hummingbirds and butterflies close.",
-    image: "/gallery/WhatsApp Image 2026-05-06 at 19.02.57 (1).jpeg",
+    image: "/gallery/english-lavender-image.jpeg",
   },
   {
     name: "BottleBrush",
     detail: "A resilient native favourite with a long bloom window and architectural seed heads.",
-    image: "/gallery/WhatsApp Image 2026-05-06 at 19.03.00 (3).jpeg",
+    image: "/gallery/crimson-bottle-brush-one.jpeg",
   },
 ];
 
@@ -86,10 +87,12 @@ export default function Home() {
             <p>Good growing does not need to be complicated. Meet a few considered essentials for bringing more life into your space.</p>
           </div>
           <div className="product-grid">
-            {products.map((product) => (
+            {limitProducts.map((product) => (
               <article className="product-card" key={product.name}>
-                <div className="product-image"><Image src={product.image} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" /></div>
-                <div className="product-info"><div><p className="card-kicker">{product.type}</p><h3>{product.name}</h3></div><span className="price">{product.price}</span></div>
+                <div className="product-image">
+                  {product.image ? <Image src={product.image} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" /> : <span className="product-image-placeholder">Product photo needed</span>}
+                </div>
+                <div className="product-info"><div><p className="card-kicker">{product.type}</p><h3>{product.name}</h3></div><span className="price">{formatStartingPrice(product)}</span></div>
                 <Link className="card-action" href={`/product/${product.id}`} aria-label={`View ${product.name}`}>
                   View collection <span aria-hidden="true">↗</span>
                 </Link>
@@ -115,7 +118,7 @@ export default function Home() {
 
       <section className="team-section section-pad">
         <div className="page-shell team-grid">
-          <div className="team-photo"><Image src="/gallery/WhatsApp Image 2026-05-06 at 19.02.57 (2).jpeg" alt="Plants growing together" fill sizes="(max-width: 1024px) 100vw, 50vw" /></div>
+          <div className="team-photo"><Image src="/gallery/nursery-image-five.jpeg" alt="Plants growing together" fill sizes="(max-width: 1024px) 100vw, 50vw" /></div>
           <div className="team-copy"><p className="eyebrow">04 / Our team</p><h2>People who<br /><em>keep showing up.</em></h2><p className="lead">We are gardeners, teachers, makers and hopeful beginners.</p><p>Pollination is built by people who believe care is a practice. We share what we learn, make space for questions and keep our hands in the soil.</p><a className="text-link" href="/about">Meet the people behind Pollination <span aria-hidden="true">↗</span></a></div>
         </div>
       </section>
