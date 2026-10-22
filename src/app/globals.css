@@ -109,7 +109,8 @@ h1 em, h2 em { color: var(--green); font-style: italic; }
 .location-grid { align-items: end; }
 .location-grid > div:first-child { max-width: 430px; }
 .location-grid h2 { margin: 20px 0 28px; }
-.location-map { align-items: center; background-color: #c7d9c2; background-image: radial-gradient(#a9c19f 1px, transparent 1px); background-size: 18px 18px; display: flex; flex-direction: column; justify-content: center; min-height: 380px; text-align: center; }
+.location-map, .contact-map { aspect-ratio: 4 / 3; background: #e4e6e1; min-height: 380px; overflow: hidden; position: relative; }
+.map-embed { border: 0; height: 100%; inset: 0; position: absolute; width: 100%; }
 .map-mark { align-items: center; background: var(--green); border-radius: 50% 50% 50% 0; color: #fff; display: flex; font-family: "Fraunces", Georgia, serif; font-size: 25px; height: 62px; justify-content: center; margin-bottom: 25px; transform: rotate(-45deg); width: 62px; }
 .location-map p { font-family: "Fraunces", Georgia, serif; font-size: 24px; }
 .location-map span { color: #536657; font-size: 12px; line-height: 1.7; margin-top: 10px; }
@@ -245,7 +246,6 @@ h1 em, h2 em { color: var(--green); font-style: italic; }
 .form-reset { background: transparent; border: 0; border-bottom: 1px solid #c8dfc1; color: #c8dfc1; cursor: pointer; font-size: 12px; margin-top: 30px; padding: 0 0 8px; }
 .contact-location { background: var(--leaf); padding: 90px 0; }
 .contact-location-grid { align-items: center; }
-.contact-map { align-items: center; background-color: #c7d9c2; background-image: radial-gradient(#a9c19f 1px, transparent 1px); background-size: 18px 18px; display: flex; flex-direction: column; justify-content: center; min-height: 390px; text-align: center; }
 .contact-map-mark { align-items: center; background: var(--green); border-radius: 50% 50% 50% 0; color: #fff; display: flex; font-family: "Fraunces", Georgia, serif; font-size: 25px; height: 62px; justify-content: center; margin-bottom: 25px; transform: rotate(-45deg); width: 62px; }
 .contact-map span { color: var(--green); font-family: "Fraunces", Georgia, serif; font-size: 24px; }
 .contact-location-copy { max-width: 390px; }
@@ -279,6 +279,13 @@ h1 em, h2 em { color: var(--green); font-style: italic; }
 .gallery-invitation-inner { align-items: start; display: flex; flex-direction: column; }
 .gallery-invitation h2 { margin: 20px 0 24px; }
 .gallery-invitation-inner > p:not(.eyebrow) { color: var(--muted); font-size: 15px; line-height: 1.7; max-width: 390px; }
+
+.whatsapp-float { display: none; }
+
+@media (max-width: 767.98px) {
+  .whatsapp-float { align-items: center; background: #fff; border-radius: 50%; bottom: max(18px, env(safe-area-inset-bottom)); box-shadow: 0 3px 14px rgba(23,53,42,.22); display: flex; height: 60px; justify-content: center; position: fixed; right: 18px; width: 60px; z-index: 90; }
+  .whatsapp-float:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+}
 
 @media (max-width: 1100px) {
   .product-browser { grid-template-columns: minmax(0, 1fr); }

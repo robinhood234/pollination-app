@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer/Footer";
@@ -42,6 +43,16 @@ export default function RootLayout({
         {children}
        
          <Footer />
+
+        <a
+          className="whatsapp-float"
+          href="https://wa.me/254740478418"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat with Pollination on WhatsApp"
+        >
+          <Image src="/whatsapp.svg" alt="" width={48} height={48} />
+        </a>
        
         </body>
     </html>

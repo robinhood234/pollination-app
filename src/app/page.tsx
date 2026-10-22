@@ -131,7 +131,7 @@ export default function Home() {
       </section>
 
       <section id="contact" className="location-section section-pad">
-        <div className="page-shell location-grid"><div><p className="eyebrow">06 / Where we are</p><h2>Come find<br /><em>your corner.</em></h2><p className="lead">A working garden, a warm cup and a place to begin again.</p><p>Visit our studio garden in Nairobi for seasonal plants, workshops and honest conversations about growing.</p><a className="button button-green" href="mailto:hello@pollination.co">Plan a visit <span aria-hidden="true">↗</span></a></div><div className="location-map"><div className="map-mark">P</div><p>Pollination Studio Garden</p><span>Magumu, Nakuru<br />Open Mon–Sat · 9am–5pm</span></div></div>
+        <div className="page-shell location-grid"><div><p className="eyebrow">06 / Where we are</p><h2>Come find<br /><em>your corner.</em></h2><p className="lead">A working garden, a warm cup and a place to begin again.</p><p>Visit our studio garden in Nairobi for seasonal plants, workshops and honest conversations about growing.</p><a className="button button-green" href="mailto:hello@pollination.co">Plan a visit <span aria-hidden="true">↗</span></a></div><div className="location-map"><iframe className="map-embed" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d867.4892830615!2d36.554188269519045!3d-0.8179179999483721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwNDknMDQuNSJTIDM2wrAzMycxNy40IkU!5e1!3m2!1sen!2ske!4v1792661671593!5m2!1sen!2ske" title="Pollination Studio Garden location" allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin" /></div></div>
       </section>
     </main>
   );

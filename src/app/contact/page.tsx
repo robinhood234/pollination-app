@@ -79,7 +79,7 @@ export default function ContactPage() {
 
       <section className="contact-location">
         <div className="page-shell contact-location-grid">
-          <div className="contact-map"><div className="contact-map-mark">P</div><span>Our garden studio</span></div>
+          <div className="contact-map"><iframe className="map-embed" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d867.4892830615!2d36.554188269519045!3d-0.8179179999483721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwNDknMDQuNSJTIDM2wrAzMycxNy40IkU!5e1!3m2!1sen!2ske!4v1792661671593!5m2!1sen!2ske" title="Pollination Studio Garden location" allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin" /></div>
           <div className="contact-location-copy"><p className="eyebrow">Where to find us</p><h2>Make a day<br /><em>of the visit.</em></h2><p>Come by for seasonal plants, growing advice and a slower conversation about what your space needs.</p><p className="contact-hours"><strong>Nakuru, Naivasha</strong><br />Monday–Saturday · 9am–5pm</p><a className="button button-green" href="mailto:shirostan@gmail.com">Plan a visit <span aria-hidden="true">↗</span></a></div>
         </div>
       </section>

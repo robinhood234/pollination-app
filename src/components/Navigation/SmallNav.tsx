@@ -34,7 +34,13 @@ const SmallNav = () => {
 		<>
 			<div className='flex items-center justify-between bg-background p-3 shadow-md'>
 				<Link href='/' onClick={() => setIsOpen(false)}>
-					<span className='font-dancing text-2xl'>Pollination</span>
+					 <div className='flex justify-center items-center gap-2'>  
+						  <Image src={"/pollination-logo-concept.svg"} width={35} height={35} alt='icon'/> 
+						  <div className='flex flex-col items-center leading-none'>
+						  <span className='text-lg font-dancing font-semibold'>Pollination</span>
+						  <span className='text-md font-dancing'>Propagators</span>
+							</div> 
+						  </div>
 				</Link>
 
 				<button

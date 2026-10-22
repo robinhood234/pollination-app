@@ -1,15 +1,20 @@
 "use client"
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 const LargeNav = () => {
   return (
-    <div className='flex justify-between p-3 bg-background gap-1 shadow-md'>
+    <div className='flex justify-between p-3 bg-background  gap-1 shadow-md'>
   
   <Link href={"/"}>
   
-      <div className='flex justify-center items-center gap-2'>    
-      <span className='text-2xl font-dancing'>Pollination</span>
+      <div className='flex justify-center items-center gap-2'>  
+      <Image src={"/pollination-logo-concept.svg"} width={45} height={45} alt='icon'/> 
+      <div className='flex flex-col items-center leading-none'>
+      <span className='text-xl font-dancing font-semibold'>Pollination</span>
+      <span className='text-md font-dancing'>Propagators</span>
+        </div> 
       </div>
   </Link>
 
