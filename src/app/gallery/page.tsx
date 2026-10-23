@@ -6,43 +6,37 @@ import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
 const galleryItems = [
-  { image: "/gallery/Jasmine.jpeg", title: "Jasmine" },
+  { image: "/gallery/jasmine-ttwo.jpeg", title: "Jasmine" },
   { image: "/gallery/black-wattle-one.jpeg", title: "Black Wattle in bloom" },
-  { image: "/gallery/black-wattle-two.jpeg", title: "Black Wattle foliage" },
-  { image: "/gallery/bottle-brush-two.jpeg", title: "Bottlebrush" },
-  { image: "/gallery/bottle-brush.jpeg", title: "Bottlebrush flowers" },
+  { image: "/gallery/bottle-brush-two.jpeg", title: "Bottlebrush-(Tea tree)" },
   { image: "/gallery/chameleon.jpeg", title: "Chameleon among Cypress" },
   { image: "/gallery/crimson-bottle-brush-one.jpeg", title: "Crimson Bottlebrush" },
-  { image: "/gallery/cypress-image-one.jpeg", title: "Cypress sapling" },
-  { image: "/gallery/cypress-image.jpeg", title: "Cypress" },
-  { image: "/gallery/english-lavender-image-two.jpeg", title: "English Lavender" },
-  { image: "/gallery/english-lavender-image.jpeg", title: "English Lavender in bloom" },
-  { image: "/gallery/english-lavender-two.jpeg", title: "English Lavender close-up" },
-  { image: "/gallery/french-lavender-five.jpeg", title: "French Lavender" },
-  { image: "/gallery/french-lavender-four.jpeg", title: "French Lavender foliage" },
+  { image: "/gallery/cypress-image-one.jpeg", title: "Cypress" },
+  { image: "/gallery/cypress-image.jpeg", title: "Cypress sapling" },
+  { image: "/gallery/english-lavender-image-two.jpeg", title: "English Lavender close up" },
+  { image: "/gallery/english-lavender-image.jpeg", title: "English Lavender sapling" },
+  { image: "/gallery/english-lavender-two.jpeg", title: "English Lavender in bloom" },
+  { image: "/gallery/french-lavender-five.jpeg", title: "English Lavender flowers" },
   { image: "/gallery/french-lavender-one.jpeg", title: "French Lavender in bloom" },
-  { image: "/gallery/french-lavender-six.jpeg", title: "French Lavender plants" },
-  { image: "/gallery/french-lavender-three.jpeg", title: "French Lavender detail" },
-  { image: "/gallery/french-lavender-two.jpeg", title: "French Lavender growth" },
+  { image: "/gallery/french-lavender-six.jpeg", title: "Frequent visitor" },
   { image: "/gallery/german-chamomile.jpeg", title: "German Chamomile" },
   { image: "/gallery/hero-image.jpeg", title: "Garden in bloom" },
-  { image: "/gallery/honesuckle-two.jpeg", title: "Honeysuckle plants" },
+  { image: "/gallery/tree tomato 2.jpeg", title: "Tree tomatoes close up" },
   { image: "/gallery/honeysuckle-one.jpeg", title: "Honeysuckle flowers" },
   { image: "/gallery/insect-one.jpeg", title: "A garden visitor" },
   { image: "/gallery/lavender.jpeg", title: "Lavender" },
   { image: "/gallery/manuka-four.jpeg", title: "Manuka" },
   { image: "/gallery/manuka-image-2.jpeg", title: "Manuka in the nursery" },
   { image: "/gallery/manuka-image.jpeg", title: "Manuka sapling" },
-  { image: "/gallery/manuka-one.jpeg", title: "Manuka foliage" },
+  { image: "/gallery/manuka-one.jpeg", title: "Manuka in bloom" },
   { image: "/gallery/manuka-three.jpeg", title: "Manuka flowers" },
-  { image: "/gallery/manuka-two.jpeg", title: "Young Manuka" },
+  { image: "/gallery/manuka-two.jpeg", title: "Manuka matured" },
   { image: "/gallery/mexiacan-heather-two.jpeg", title: "Mexican Heather" },
   { image: "/gallery/mexican-heather-one.jpeg", title: "Mexican Heather in bloom" },
   { image: "/gallery/mexican-heather-three.jpeg", title: "Mexican Heather foliage" },
   { image: "/gallery/mexican-heather-two.jpeg", title: "Mexican Heather close-up" },
   { image: "/gallery/nursery-image-five.jpeg", title: "The nursery" },
-  { image: "/gallery/nursery-image-four (1).jpeg", title: "Growing together" },
-  { image: "/gallery/nursery-image-three.jpeg", title: "New growth" },
+  { image: "/gallery/nursery-image-six.jpeg", title: "Growing together" },
   { image: "/gallery/nursery-image-two.jpeg", title: "Nursery plants" },
   { image: "/gallery/nursery-image.jpeg", title: "A place to grow" },
   { image: "/gallery/rosemary-image.jpeg", title: "Rosemary" },
@@ -74,7 +68,7 @@ export default function GalleryPage() {
       <section className="gallery-page-hero">
         <div className="page-shell gallery-page-hero-inner">
           <p className="eyebrow">Pollination / Field journal</p>
-          <h1>From our<br /><em>little world.</em></h1>
+          <h1>From our<br /><span className="text-orange-500">little world.</span></h1>
           <p>A visual record of the plants, people and small moments that make this work worth tending.</p>
         </div>
         <span className="gallery-page-mark">Gallery / 01</span>

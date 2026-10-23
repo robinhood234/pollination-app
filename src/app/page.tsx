@@ -27,17 +27,17 @@ const limitProducts = products.slice(0, 3);
 const plants = [
   {
     name: "Manuka",
-    detail: "Fragrant and drought-friendly, with soft blooms bees return to all summer.",
+    detail: "Renowned for it's medicinal properties, this compact shrub produces an abundance of blooms attracting many pollinators.",
     image: "/gallery/hero-image.jpeg",
   },
   {
     name: "Lavender",
-    detail: "A bright, generous perennial that brings hummingbirds and butterflies close.",
-    image: "/gallery/english-lavender-image.jpeg",
+    detail: "A bright, fragrant perennial that brings bees and butterflies to your garden.",
+    image: "/gallery/english-lavender-two.jpeg",
   },
   {
     name: "BottleBrush",
-    detail: "A resilient native favourite with a long bloom window and architectural seed heads.",
+    detail: "A small to medium ornamental tree with striking crimson red blooms and highly fragrant leaves.",
     image: "/gallery/crimson-bottle-brush-one.jpeg",
   },
 ];
@@ -57,9 +57,9 @@ export default function Home() {
         
         <div className="hero-shade" aria-hidden="true" />
         <div className="hero-content page-shell">
-          <p className="eyebrow hero-eyebrow">Plant well. Live lightly.</p>
-          <h1>Make room<br /><em>for wonder.</em></h1>
-          <p className="hero-copy">Pollination is a living collection of plants, tools and ideas for people who want their gardens to give more back.</p>
+          {/* <p className="eyebrow hero-eyebrow">Plant well. Live lightly.</p> */}
+          <h1>Trees, Fruits and <br /> <span className="text-orange-500"> Apothecary</span></h1>
+          <p className="hero-copy text-lg">PolliNation is a collection of indigenous, commercial, medicinal and ornamental plants selected to support eco-systems and pollinators. </p>
           <a className="button button-light" href="#mission">Discover our purpose <span aria-hidden="true">↓</span></a>
         </div>
         <div className="hero-note">Growing good things<br /><span>since 2026</span></div>
@@ -73,7 +73,7 @@ export default function Home() {
           </div>
           <div className="mission-copy">
             <p className="lead">We believe the smallest patch of green can create a ripple of change.</p>
-            <p>Pollination brings together thoughtful plants, practical knowledge and a generous community. We are here to make growing feel possible, beautiful and useful, wherever you are starting from.</p>
+            <p>At PolliNation Propagators, we grow and supply a diverse variety of trees including vital commercial timber, indigenous species, ornamentals, fruit trees and a selection of herbal plants.</p>
             <a className="text-link" href="#plants">See what is growing <span aria-hidden="true">↗</span></a>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default function Home() {
       <section className="team-section section-pad">
         <div className="page-shell team-grid">
           <div className="team-photo"><Image src="/gallery/nursery-image-five.jpeg" alt="Plants growing together" fill sizes="(max-width: 1024px) 100vw, 50vw" /></div>
-          <div className="team-copy"><p className="eyebrow">04 / Our team</p><h2>People who<br /><em>keep showing up.</em></h2><p className="lead">We are gardeners, teachers, makers and hopeful beginners.</p><p>Pollination is built by people who believe care is a practice. We share what we learn, make space for questions and keep our hands in the soil.</p><a className="text-link" href="/about">Meet the people behind Pollination <span aria-hidden="true">↗</span></a></div>
+          <div className="team-copy"><p className="eyebrow">04 / Our team</p><h2>People who<br /><em>keep showing up.</em></h2><p className="lead">We are propagators, conservation advocates, and passionate cultivators of resilient landscapes</p><p>At Pollination Propagators, we nurture plants that sustain pollinators, restore biodiversity, and enrich livelihoods. We share practical knowledge, encourage curiosity, and work to make ecological stewardship accessible to everyone.</p><a className="text-link" href="/about">Meet the people behind Pollination <span aria-hidden="true">↗</span></a></div>
         </div>
       </section>
 
@@ -131,7 +131,7 @@ export default function Home() {
       </section>
 
       <section id="contact" className="location-section section-pad">
-        <div className="page-shell location-grid"><div><p className="eyebrow">06 / Where we are</p><h2>Come find<br /><em>your corner.</em></h2><p className="lead">A working garden, a warm cup and a place to begin again.</p><p>Visit our studio garden in Nairobi for seasonal plants, workshops and honest conversations about growing.</p><a className="button button-green" href="mailto:hello@pollination.co">Plan a visit <span aria-hidden="true">↗</span></a></div><div className="location-map"><iframe className="map-embed" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d867.4892830615!2d36.554188269519045!3d-0.8179179999483721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwNDknMDQuNSJTIDM2wrAzMycxNy40IkU!5e1!3m2!1sen!2ske!4v1792661671593!5m2!1sen!2ske" title="Pollination Studio Garden location" allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin" /></div></div>
+        <div className="page-shell location-grid"><div><p className="eyebrow">06 / Where we are</p><h2>Visit.<em>Experience.</em><br/>Connect.</h2><p className="lead">A thriving nursery, fresh mountain air, and a place to reconnect with nature.</p><p>Visit our nursery to explore indigenous, medicinal, ornamental, and commercial plants carefully selected to support healthy ecosystems and pollinators. Learn, grow, and discover practical ways to cultivate a more sustainable future.</p><a className="button button-green" href="/contact">Plan a visit <span aria-hidden="true">↗</span></a></div><div className="location-map"><iframe className="map-embed" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d867.4892830615!2d36.554188269519045!3d-0.8179179999483721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwNDknMDQuNSJTIDM2wrAzMycxNy40IkU!5e1!3m2!1sen!2ske!4v1792661671593!5m2!1sen!2ske" title="Pollination Studio Garden location" allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin" /></div></div>
       </section>
     </main>
   );

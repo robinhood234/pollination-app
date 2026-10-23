@@ -39,13 +39,13 @@ h1 em, h2 em { color: var(--green); font-style: italic; }
 
 .hero-section { align-items: center; color: #fff; display: flex; min-height: max(700px, calc(100svh - 56px)); padding: 100px 0 120px; position: relative; }
 .hero-image, .hero-shade { inset: 0; position: absolute; }
-.hero-image { background: url('/gallery/hero-image.jpeg') center/cover; filter: saturate(.78); }
+.hero-image { background: url('/gallery/rosemary-image-two.jpeg') center/cover; filter: saturate(.78); }
 .hero-shade { background: linear-gradient(90deg, rgba(13,47,29,.9), rgba(13,47,29,.38) 55%, rgba(13,47,29,.08)); }
 .hero-content { position: relative; z-index: 1; }
 .hero-eyebrow { color: #d9ead5; margin-bottom: 24px; }
 .hero-content h1 { font-size: clamp(68px, 11vw, 132px); max-width: 700px; }
 .hero-content h1 em { color: #d0e9c8; }
-.hero-copy { color: #eef5e9; font-size: 17px; line-height: 1.65; margin: 28px 0; max-width: 390px; }
+.hero-copy { color: #eef5e9; font-size: 27px; line-height: 1.65; margin: 28px 0; max-width: 490px; }
 .hero-note { bottom: 30px; color: #eff8ec; font-size: 11px; letter-spacing: .12em; line-height: 1.5; position: absolute; right: max(24px, calc((100vw - 1120px) / 2)); text-align: right; text-transform: uppercase; z-index: 1; }
 .hero-note span { color: #bed5b8; }
 

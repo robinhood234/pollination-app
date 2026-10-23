@@ -41,8 +41,8 @@ export default function ContactPage() {
       <section className="contact-hero">
         <div className="page-shell contact-hero-inner">
           <p className="eyebrow">Pollination / Contact</p>
-          <h1>Let&apos;s grow<br /><em>something good.</em></h1>
-          <p>Questions about a plant, a garden or where to begin? We&apos;d love to hear from you.</p>
+          <h1>Let's grow<br /><span className="text-orange-500">something good.</span></h1>
+          <p>Questions about a plant, a garden or where to begin? We'd love to hear from you.</p>
         </div>
       </section>
 
