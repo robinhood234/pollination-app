@@ -1,42 +1,62 @@
-import React from 'react'
+import Image from "next/image";
+import Link from "next/link";
 
-const LargeFooter = () => {
-  return (
-    <div className="bg-[#01200f] text-white p-8 text-center ">
-      <div className='flex flex-col gap-3 md:flex-row justify-between'>
-        <div className='flex w-full max-w-[300px] flex-col gap-3 items-center items-start'>
-          <div className='flex gap-2'>
-          {/* <img src="/star-fall-svgrepo-com.svg" alt="" className='w-10 h-10'/> */}
-          <h1 className='font-dancing text-3xl'>Pollination</h1>
-          </div>
+const pageLinks = [
+	{ href: "/", label: "Home" },
+	{ href: "/about", label: "About" },
+	{ href: "/product", label: "Products" },
+	{ href: "/gallery", label: "Gallery" },
+	{ href: "/contact", label: "Contact" },
+];
 
-          <span className='text-left text-gray-300/70'>
-We believe a healthy environment begins with the smallest wings. Our plants are carefully selected to support bees, butterflies, birds, and other essential pollinators — the quiet heroes behind thriving ecosystems. When you shop with us, you’re not just buying a plant; you’re helping rebuild nature one bloom at a time.          </span>
-        </div>
+const socialLinks = [
+	{ name: "YouTube", href: "https://www.youtube.com/", icon: "/youtube-line-icon.svg" },
+	{ name: "TikTok", href: "https://www.tiktok.com/", icon: "/tiktok-line-icon.svg" },
+	{ name: "WhatsApp", href: "https://wa.me/254740478418", icon: "/whatsapp-line-icon.svg" },
+	{ name: "X", href: "https://x.com/", icon: "/x-icon.svg" },
+	{ name: "Instagram", href: "https://www.instagram.com/", icon: "/instagram-line-icon.svg" },
+];
 
-       
-        <div className='flex w-full max-w-[300px] flex-col gap-4 items-start justify-start '> 
-          <h2 className='text-3xl font-raleway '>Contact Us</h2>
-          <ul className='list-inside space-y-4 text-left text-gray-300/80'>
-            <li>
-              <h2>Phone Number</h2>
-              <span>+254 740478418</span>
-            </li>
-            <li>
-              <h2>Email</h2>
-              <span>pollination@propagator.com</span>
-            </li>
-             <li>
-              <h2>Location</h2>
-              <span>Nakuru, Naivasha</span>
-            </li>
-          </ul>
-        </div>
-        
-      </div>
-    </div>
+export default function Footer() {
+	return (
+		<footer className="site-footer">
+			<div className="page-shell">
+				<div className="footer-sections">
+					<section className="footer-business" aria-labelledby="footer-business-title">
+						<h2 id="footer-business-title">Pollination Propagators</h2>
+						<p>We believe a healthy environment begins with the smallest wings. Our plants are selected to support pollinators and help gardens give more back.</p>
+					</section>
 
-  )
+					<nav className="footer-navigation" aria-label="Footer navigation">
+						<h2>Explore</h2>
+						<ul>
+							{pageLinks.map((link) => (
+								<li key={link.href}><Link href={link.href}>{link.label}</Link></li>
+							))}
+						</ul>
+					</nav>
+
+					<section className="footer-contact" aria-labelledby="footer-contact-title">
+						<h2 id="footer-contact-title">Contact</h2>
+						<address>
+							<a href="tel:+254740478418">+254 740 478 418</a>
+							<a href="mailto:pollination@propagator.com">info@pollination.co.ke</a>
+							<span>Nyandarua County</span>
+						</address>
+					</section>
+				</div>
+
+				<div className="footer-bottom">
+					<p className="footer-copyright">© {new Date().getFullYear()} Pollination Propagators. All rights reserved.</p>
+					<nav className="footer-socials" aria-label="Social media">
+						{socialLinks.map((social) => (
+							<a key={social.name} href={social.href} aria-label={social.name} title={social.name} target="_blank" rel="noopener noreferrer">
+								<Image src={social.icon} alt="" width={24} height={24} />
+							</a>
+						))}
+					</nav>
+				</div>
+			</div>
+		</footer>
+	);
 }
-
-export default LargeFooter

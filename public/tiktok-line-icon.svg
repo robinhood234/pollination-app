@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 24 24"
+   id="tiktok"
+   version="1.1"
+   sodipodi:docname="tiktok-line-icon.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="33.875"
+     inkscape:cx="12.01476"
+     inkscape:cy="12"
+     inkscape:window-width="1920"
+     inkscape:window-height="1094"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="tiktok" />
+  <g
+     id="social/logos/tiktok"
+     fill-rule="evenodd"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     style="stroke:#ffffff">
+    <path
+       id="line"
+       stroke="#000"
+       d="M15.5,2.5 C15.5,4.64219539 17.1839685,6.39107888 19.3003597,6.49510469 L19.5,6.5 L19.5,9.5 C18.0126081,9.5 16.6335669,9.03609553 15.4996713,8.2450814 L15.5,14.5 C15.5,17.8137085 12.8137085,20.5 9.5,20.5 L9,20.5 C5.96243388,20.5 3.5,18.0375661 3.5,15 C3.5,11.9624339 5.96243388,9.5 9,9.5 L9.5,9.5 L9.5,12.5 L9,12.5 C7.61928813,12.5 6.5,13.6192881 6.5,15 C6.5,16.3807119 7.61928813,17.5 9,17.5 L9.5,17.5 C11.1568542,17.5 12.5,16.1568542 12.5,14.5 L12.5,2.5 L15.5,2.5 Z"
+       fill="none"
+       stroke-width="1"
+       style="stroke:#ffffff" />
+  </g>
+</svg>
