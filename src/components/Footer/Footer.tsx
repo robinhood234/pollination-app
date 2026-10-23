@@ -10,11 +10,11 @@ const pageLinks = [
 ];
 
 const socialLinks = [
-	{ name: "YouTube", href: "https://www.youtube.com/", icon: "/youtube-line-icon.svg" },
-	{ name: "TikTok", href: "https://www.tiktok.com/", icon: "/tiktok-line-icon.svg" },
+	{ name: "YouTube", href: "https://www.youtube.com/@PollinationPropagators", icon: "/youtube-line-icon.svg" },
+	{ name: "TikTok", href: "https://www.tiktok.com/@pollination.propagators?lang=en", icon: "/tiktok-line-icon.svg" },
 	{ name: "WhatsApp", href: "https://wa.me/254740478418", icon: "/whatsapp-line-icon.svg" },
-	{ name: "X", href: "https://x.com/", icon: "/x-icon.svg" },
-	{ name: "Instagram", href: "https://www.instagram.com/", icon: "/instagram-line-icon.svg" },
+	{ name: "X", href: "https://x.com/PollinationProp", icon: "/x-icon.svg" },
+	{ name: "Instagram", href: "https://www.instagram.com/pollination.propagators/", icon: "/instagram-line-icon.svg" },
 ];
 
 export default function Footer() {
