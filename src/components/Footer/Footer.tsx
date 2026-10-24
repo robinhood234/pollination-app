@@ -40,7 +40,7 @@ export default function Footer() {
 						<h2 id="footer-contact-title">Contact</h2>
 						<address>
 							<a href="tel:+254740478418">+254 740 478 418</a>
-							<a href="mailto:pollination@propagator.com">info@pollination.co.ke</a>
+							<a href="mailto:info@pollination.co.ke">info@pollination.co.ke</a>
 							<span>Nyandarua, South Kinangop</span>
 						</address>
 					</section>

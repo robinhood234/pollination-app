@@ -53,8 +53,8 @@ export default function ContactPage() {
             <h2>Good things<br />start with a <span className="text-orange-500">note.</span></h2>
             <p className="contact-details-copy">Tell us what you are growing, what you are wondering about, or simply what brought you here. Our small team will get back to you soon.</p>
             <div className="contact-options">
-              <a href="mailto:shirostan@gmail.com"><span>Email</span><strong>info@pollination.co.ke</strong><b aria-hidden="true">↗</b></a>
-              <a href="tel:+254729842282"><span>Phone</span><strong>+254 740478418</strong><b aria-hidden="true">↗</b></a>
+              <a href="mailto:info@pollination.co.ke"><span>Email</span><strong>info@pollination.co.ke</strong><b aria-hidden="true">↗</b></a>
+              <a href="tel:+254740478418"><span>Phone</span><strong>+254 740478418</strong><b aria-hidden="true">↗</b></a>
               <div><span>Visit</span><strong>Nyandarua, South Kinangop<br />Kenya</strong></div>
             </div>
             <Link className="text-link" href="/about">Learn more about us <span aria-hidden="true">↗</span></Link>
