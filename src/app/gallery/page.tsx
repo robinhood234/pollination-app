@@ -68,7 +68,7 @@ export default function GalleryPage() {
       <section className="gallery-page-hero">
         <div className="page-shell gallery-page-hero-inner">
           <p className="eyebrow">Pollination / Field journal</p>
-          <h1>From our<br /><span className="text-orange-500">little world.</span></h1>
+          <h1>From our<br />little <span className="text-orange-500">world.</span></h1>
           <p>A visual record of the plants, people and small moments that make this work worth tending.</p>
         </div>
         <span className="gallery-page-mark">Gallery / 01</span>
@@ -77,7 +77,7 @@ export default function GalleryPage() {
       <section className="gallery-archive section-pad">
         <div className="page-shell">
           <div className="gallery-archive-heading">
-            <div><p className="eyebrow">An ongoing collection</p><h2>Look closer.<br /><em>Stay awhile.</em></h2></div>
+            <div><p className="eyebrow">An ongoing collection</p><h2>Look closer.<br /><span className="text-orange-500">Stay</span> awhile.</h2></div>
             <p>Every image is a small reminder that the living world is already doing more than we notice.</p>
           </div>
 
@@ -106,7 +106,7 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      <section className="gallery-invitation section-pad"><div className="page-shell gallery-invitation-inner"><p className="eyebrow">Your turn</p><h2>Make space<br /><em>for more life.</em></h2><p>See something you would like to grow? Explore our collection of plants chosen for generous gardens and hopeful beginnings.</p><Link className="button button-green" href="/product">Explore plants <span aria-hidden="true">↗</span></Link></div></section>
+      <section className="gallery-invitation section-pad"><div className="page-shell gallery-invitation-inner"><p className="eyebrow">Your turn</p><h2>Make space<br />for more <span className="text-orange-500">life.</span></h2><p>See something you would like to grow? Explore our collection of plants chosen for generous gardens and hopeful beginnings.</p><Link className="button button-green" href="/product">Explore plants <span aria-hidden="true">↗</span></Link></div></section>
     </main>
   );
 }

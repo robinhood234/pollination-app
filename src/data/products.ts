@@ -335,7 +335,7 @@ export const products: Product[] = [
   {
     id: "rosemary",
     name: "Rosemary",
-    type: "For useful kitchen gardens",
+    type: "Useful for kitchen gardens",
     category: "Medicinal",
     categoryRating: 3,
     status: "Available",

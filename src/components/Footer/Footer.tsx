@@ -24,7 +24,7 @@ export default function Footer() {
 				<div className="footer-sections">
 					<section className="footer-business" aria-labelledby="footer-business-title">
 						<h2 id="footer-business-title">Pollination Propagators</h2>
-						<p>We believe a healthy environment begins with the smallest wings. Our plants are selected to support pollinators and help gardens give more back.</p>
+						<p>PolliNation is a collection of indigenous, commercial, medicinal and ornamental plants selected to support eco-systems and pollinators.</p>
 					</section>
 
 					<nav className="footer-navigation" aria-label="Footer navigation">
@@ -41,7 +41,7 @@ export default function Footer() {
 						<address>
 							<a href="tel:+254740478418">+254 740 478 418</a>
 							<a href="mailto:pollination@propagator.com">info@pollination.co.ke</a>
-							<span>Nyandarua County</span>
+							<span>Nyandarua, South Kinangop</span>
 						</address>
 					</section>
 				</div>

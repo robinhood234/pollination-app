@@ -42,7 +42,7 @@ export default function ProductListingPage() {
       <section className="product-list-hero">
         <div className="page-shell">
           <p className="eyebrow">Pollination / Product library</p>
-          <h1>Find something<br /><span className="text-orange-500">good to grow.</span></h1>
+          <h1>Find something<br />good to <span className="text-orange-500">grow.</span></h1>
           <p>Thoughtfully grown plants for homes, gardens, farms, and landscapes.</p>
         </div>
       </section>
