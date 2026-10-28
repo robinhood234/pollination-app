@@ -197,7 +197,7 @@ export const products: Product[] = [
     status: "Available",
     pollinatorFriendly: true,
     startingPrice: 100,
-    image: "/gallery/Jasmine.jpeg",
+    image: "/gallery/jasmine-ttwo.jpeg",
     shortDescription: "A fragrant climber with delicate blooms for trellises and walls.",
     description: "Common Jasmine brings fragrance and soft colour to sunny garden structures.",
     care: "Provide support for climbing stems and water regularly while establishing.",

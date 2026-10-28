@@ -87,6 +87,15 @@ export default function ProductDetailPage() {
               </span>
             )}
           </div>
+          <aside className="product-purchase-notice" role="note">
+            <Image src="/info.svg" alt="" width={20} height={20} />
+            <div>
+              <p>To purchase {product.name}, please <Link href="/contact">reach out through our contact options</Link>.</p>
+              <a className="catalogue-download-link" href="/PolliNation%20Catalogue.pdf" download="PolliNation-Catalogue-Sept-Dec-2026.pdf">
+                Download the Sept–Dec 2026 inventory catalogue <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </aside>
           <div className="product-facts">
             <div><span>Climate</span><strong>{product.climate}</strong></div>
             <div><span>Size</span><strong>{product.size}</strong></div>

@@ -34,6 +34,9 @@ export default function Footer() {
 								<li key={link.href}><Link href={link.href}>{link.label}</Link></li>
 							))}
 						</ul>
+						<a className="footer-catalogue-link" href="/PolliNation%20Catalogue.pdf" download="PolliNation-Catalogue-Sept-Dec-2026.pdf">
+							Download Sept–Dec 2026 catalogue
+						</a>
 					</nav>
 
 					<section className="footer-contact" aria-labelledby="footer-contact-title">

@@ -44,6 +44,9 @@ export default function ProductListingPage() {
           <p className="eyebrow">Pollination / Product library</p>
           <h1>Find something<br />good to <span className="text-orange-500">grow.</span></h1>
           <p>Thoughtfully grown plants for homes, gardens, farms, and landscapes.</p>
+          <a className="catalogue-download-link" href="/PolliNation%20Catalogue.pdf" download="PolliNation-Catalogue-Sept-Dec-2026.pdf">
+            Download the Sept–Dec 2026 inventory catalogue <span aria-hidden="true">↓</span>
+          </a>
         </div>
       </section>
 
@@ -83,12 +86,12 @@ export default function ProductListingPage() {
                       <span className="product-image-placeholder">Product photo needed</span>
                     )}
                     {product.categoryRating === 3 && (
-                      <span className="product-icon product-trophy" role="img" aria-label="Top rated in category">
+                      <span className="product-icon product-trophy" role="img" aria-label="Top rated in category" data-tooltip="Top rated in category" title="Top rated in category">
                         <Image src="/trophy.svg" alt="" width={24} height={24} />
                       </span>
                     )}
                     {product.pollinatorFriendly && (
-                      <span className="product-icon product-bee" role="img" aria-label="Pollinator friendly">
+                      <span className="product-icon product-bee" role="img" aria-label="Pollinator friendly" data-tooltip="Pollinator favourite" title="Pollinator favourite">
                         <Image src="/bee.svg" alt="" width={24} height={24} />
                       </span>
                     )}
