@@ -65,8 +65,12 @@ export default function Home() {
         
         <div className="hero-shade" aria-hidden="true" />
         <div className="hero-content page-shell">
+          <div className="flex items-center gap-x-2 eyebrow hero-eyebrow">
+          <Image src={"/map-pin.svg"} width={22} height={22} alt="icon"/>
+          <p>Nyandarua, South Kinangop</p>
+          </div>
           <h1 className="w-full">Trees, Fruits and <span className="text-orange-500"> Herbal Apothecary</span></h1>
-          <p className="hero-copy text-lg">PolliNation is a collection of indigenous, commercial, medicinal and ornamental plants selected to support eco-systems and pollinators. </p>
+          <p className="hero-copy text-lg">We are a plant studio and tree nursery specialising in the propagation of commercial timber/ woodlot and indigenous trees, fruit and medicinal plants and a premium collection of exotic and ornamental plants.</p>
           <a className="button button-light" href="#mission">Discover our purpose <span aria-hidden="true">↓</span></a>
         </div>
         <div className="hero-note">Growing good things<br /><span>since 2026</span></div>
