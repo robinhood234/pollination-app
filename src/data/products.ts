@@ -212,7 +212,7 @@ export const products: Product[] = [
   categoryRating: 3,
   status: "Propagating",
   pollinatorFriendly: true,
-  startingPrice: 200,
+  startingPrice: 400,
   image: "/gallery/manuka-two.jpeg",
   shortDescription: "A hardy flowering shrub valued for its relationship with pollinators.",
   description: "Manuka is a resilient flowering shrub known for its delicate blossoms and exceptional value to bees and other pollinators. It thrives in sunny locations with good drainage.",

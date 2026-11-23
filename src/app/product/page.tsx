@@ -7,7 +7,7 @@ import { formatStartingPrice, productCategories, products } from "@/data/product
 
 const categories = productCategories;
 const MIN_PRICE = 20;
-const MAX_PRICE = 300;
+const MAX_PRICE = 400;
 
 export default function ProductListingPage() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
