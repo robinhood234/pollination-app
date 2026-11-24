@@ -47,7 +47,7 @@ export default function RootLayout({
 
         <a
           className="whatsapp-float"
-          href="https://wa.me/254740478418"
+          href="https://wa.me/254184924400"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat with Pollination on WhatsApp"
